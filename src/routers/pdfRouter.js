@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
 router.get('/l/:port', async (req, res) => {
     try {
-        const url = `http://localhost:${req.params.port}`
+        const url = `http://localhost:${req.params.port}/${req.query.url}`
         const pdf = await generatePdf(req.query, url);
         res.contentType('application/pdf');
         res.send(pdf);
@@ -28,7 +28,7 @@ router.get('/l/:port', async (req, res) => {
 
 router.get('/l/s/:port', async (req, res) => {
     try {
-        const url = `https://localhost:${req.params.port}`
+        const url = `https://localhost:${req.params.port}/${req.query.url}`
         const pdf = await generatePdf(req.query, url);
         res.contentType('application/pdf');
         res.send(pdf);
@@ -40,7 +40,7 @@ router.get('/l/s/:port', async (req, res) => {
 
 router.get('/:port', async (req, res) => {
     try {
-        const url = `http://192.168.1.1:${req.params.port}`
+        const url = `http://192.168.1.1:${req.params.port}/${req.query.url}`
         const pdf = await generatePdf(req.query, url);
         res.contentType('application/pdf');
         res.send(pdf);
@@ -52,7 +52,7 @@ router.get('/:port', async (req, res) => {
 
 router.get('/s/:port', async (req, res) => {
     try {
-        const url = `https://192.168.1.1:${req.params.port}`
+        const url = `https://192.168.1.1:${req.params.port}/${req.query.url}`
         const pdf = await generatePdf(req.query, url);
         res.contentType('application/pdf');
         res.send(pdf);

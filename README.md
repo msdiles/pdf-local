@@ -1,4 +1,4 @@
-- http:/192.168.1.1:{port} => /pdf/{port}/
-- http:/192.168.1.1:{port} => /pdf/s/{port}/
-- http:/localhost:{port} => /pdf/l/{port}/
-- https:/localhost:{port} => /pdf/l/s/{port}/
+- http:/192.168.1.1:{port}/{path + query} => /pdf/{port}/?url={path + query}
+- http:/192.168.1.1:{port}/{path + query} => /pdf/s/{port}/?url={path + query}
+- http:/localhost:{port}/{path + query} => /pdf/l/{port}/?url={path + query}
+- https:/localhost:{port}/{path + query} => /pdf/l/s/{port}/?url={path + query}
